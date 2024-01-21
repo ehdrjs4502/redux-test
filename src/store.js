@@ -1,8 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./reducer/todos";
+import userReducer from "./reducer/user";
 
-export default configureStore({
-    reducer: {
-        todos: todoReducer,
-    },
+const rootReducer = {
+  todos: todoReducer,
+  user: userReducer,
+};
+
+const store = configureStore({
+  reducer: rootReducer,
 });
+
+export default store;
